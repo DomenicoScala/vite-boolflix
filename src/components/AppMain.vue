@@ -26,7 +26,8 @@
                     :titleOrName="movies.title"
                     :originalTitleOrName="movies.original_title"
                     :flag-language="movies.original_language"
-                    :voteAverage="movies.vote_average"/>
+                    :voteAverage="movies.vote_average"
+                    :img-path="movies.poster_path"/>
                 </li>
             </ul>
         </div>
@@ -39,7 +40,8 @@
                     :titleOrName="series.name"
                     :originalTitleOrName="series.original_name"
                     :flag-language="series.original_language"
-                    :voteAverage="series.vote_average"/>
+                    :voteAverage="series.vote_average"
+                    :imgPath="series.poster_path"/>
                 </li>
             </ul>
         </div>

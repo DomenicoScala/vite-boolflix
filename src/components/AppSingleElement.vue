@@ -6,6 +6,21 @@
             };
         },
         methods:{
+            getImages(img){
+                let linkImage = 'https://image.tmdb.org/t/p/'
+
+                linkImage += 'original' + img;
+
+                return linkImage
+            },
+            getStarsVote(voteAverage){
+                
+                const proporzione = voteAverage / 10;
+
+                const numInt = Math.floor(proporzione * 5)
+                
+                return numInt
+            }
 
         },
         computed:{
@@ -30,7 +45,8 @@
             titleOrName: String,
             originalTitleOrName: String,
             flagLanguage: String,
-            voteAverage: Number
+            voteAverage: Number,
+            imgPath: String
         }
     }
 </script>
@@ -51,7 +67,11 @@
         </div>
 
         <div>
-            {{ voteAverage }}
+            {{ getStarsVote(voteAverage) }}
+        </div>
+
+        <div>
+            <img :src="getImages(imgPath)" alt="">
         </div>
      </div>
        
@@ -60,6 +80,6 @@
 
 <style lang="scss" scoped>
         img{
-            height: 50px;
+            width: 30%;
         }
 </style>
