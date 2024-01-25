@@ -14,10 +14,8 @@
                 return linkImage
             },
             getStarsVote(voteAverage){
-                
-                const proporzione = voteAverage / 10;
 
-                const numInt = Math.floor(proporzione * 5)
+                const numInt = Math.floor(voteAverage / 2)
                 
                 return numInt
             }
