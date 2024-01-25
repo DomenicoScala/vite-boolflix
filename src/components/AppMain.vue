@@ -1,4 +1,5 @@
 <script>
+    import AppSingleElement from './AppSingleElement.vue';
     import { store } from '../store'
     export default{
         data(){
@@ -7,7 +8,10 @@
             };
         },
         methods:{
-
+            
+        },
+        components:{
+            AppSingleElement
         }
     }
 </script>
@@ -18,28 +22,32 @@
         <div>
             <ul>
                 <li v-for="(movies,i) in store.movies">
-                    <div>
-                        Titolo: {{ movies.title }}
-                    </div>
-
-                    <div>
-                        Titolo Original : {{ movies.original_title }}
-                    </div>
-
-                    <div>
-                        Lingua : {{ movies.original_language }}
-                    </div>
-
-                    <div>
-                        Voto: {{ movies.vote_average }}
-                    </div>
+                    <AppSingleElement
+                    :titleOrName="movies.title"
+                    :originalTitleOrName="movies.original_title"
+                    :flag-language="movies.original_language"
+                    :voteAverage="movies.vote_average"/>
                 </li>
             </ul>
         </div>
         
+        <h1>SERIES</h1>
+        <div>
+            <ul>
+                <li v-for="(series,i) in store.series">
+                    <AppSingleElement
+                    :titleOrName="series.name"
+                    :originalTitleOrName="series.original_name"
+                    :flag-language="series.original_language"
+                    :voteAverage="series.vote_average"/>
+                </li>
+            </ul>
+        </div>
 
 </template>
 
 <style lang="scss" scoped>
-
+        img{
+            height: 30px;
+        }
 </style>

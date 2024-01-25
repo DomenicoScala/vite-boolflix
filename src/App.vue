@@ -1,7 +1,6 @@
 <script>
     import AppHeader from './components/AppHeader.vue'
     import AppMain from './components/AppMain.vue'
-    import AppFooter from './components/AppFooter.vue'
     import axios from 'axios'
     import { store } from './store'    
     export default{
@@ -25,6 +24,20 @@
                 this.store.searchText = ''
 
                 })
+
+                axios
+                .get('https://api.themoviedb.org/3/search/tv',{
+                params:{
+                    api_key: '75f999b36477ad9440a83dba9f6ac3ad',
+                    query: this.store.searchText
+                }
+                })
+                .then((response) =>{
+                console.log('SERIE',response.data.results)
+                this.store.series = response.data.results
+                this.store.searchText = ''
+
+                })
             }
            
 
@@ -32,7 +45,6 @@
         components:{
             AppHeader,
             AppMain,
-            AppFooter
         },
         mounted(){  
            
@@ -46,7 +58,6 @@
 
         <AppMain/>
 
-        <AppFooter/>
 
 </template>
 
