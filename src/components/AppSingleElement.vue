@@ -13,12 +13,7 @@
 
                 return linkImage
             },
-            getStarsVote(voteAverage){
-
-                const numInt = Math.floor(voteAverage / 2)
-                
-                return numInt
-            }
+            
 
         },
         computed:{
@@ -37,6 +32,12 @@
                 finalLink += '.svg'
 
                 return finalLink
+            },
+            getStarsVote(){
+
+                return Math.ceil(this.voteAverage / 2)
+
+                
             }
         },
         props:{
@@ -65,7 +66,8 @@
         </div>
 
         <div>
-            {{ getStarsVote(voteAverage) }}
+            <i v-for="i in getStarsVote" :key="i" class="fa-solid fa-star"></i>
+            <i v-for="y in (5- getStarsVote)" :key="i" class="fa-regular fa-star"></i>
         </div>
 
         <div>
