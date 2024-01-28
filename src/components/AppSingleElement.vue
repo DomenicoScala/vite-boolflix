@@ -52,34 +52,67 @@
 
 <template>
      
-     <div>
-        <div>
-            {{ titleOrName }}
-        </div>
-
-        <div>
-            {{ originalTitleOrName }}
-        </div>
-
-        <div>
-            <img :src="getFlags" alt="">
-        </div>
-
-        <div>
-            <i v-for="i in getStarsVote" :key="i" class="fa-solid fa-star"></i>
-            <i v-for="y in (5- getStarsVote)" :key="i" class="fa-regular fa-star"></i>
-        </div>
-
-        <div>
+    <div class="card-film">
+        <!-- <div class="poster">
             <img :src="getImages(imgPath)" alt="">
+        </div> -->
+        <div class="details">
+            <h1>{{ titleOrName }}</h1>
+            <h2>{{ originalTitleOrName }}</h2>
+
+            <div class="rating">
+                <i v-for="i in getStarsVote" :key="i" class="fa-solid fa-star"></i>
+                <i v-for="y in (5- getStarsVote)" :key="y" class="fa-regular fa-star"></i>
+            </div>
+
+            <div class="lang">
+                <img :src="getFlags" alt="">
+            </div>
+
         </div>
-     </div>
+        
+        
+    </div>
        
 
 </template>
 
 <style lang="scss" scoped>
-        img{
-            width: 30%;
+        .card-film{
+            width: 300px;
+            height: 425px;
+            background: #000;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+            cursor: pointer;
+        }
+
+        .poster{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;          
+        }
+
+        .poster img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .3s;
+        }
+
+
+        
+        
+
+        
+
+    
+
+        
+
+        .lang img{
+            width: 20%;
         }
 </style>
