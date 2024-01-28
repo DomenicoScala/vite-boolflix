@@ -21,8 +21,8 @@
     <section>
         <main>
             <div class="container">                
-                <h1 v-if="store.movies.length > 0">Movies:</h1>                
-                <div class="row gx-5 gy-3">       
+                <h1 v-if="store.movies.length > 0">Movies</h1>                
+                <div class="row ">       
                         <div class="col-3" v-for="(movies,i) in store.movies">
                             <ul>
                                 <li>
@@ -38,8 +38,8 @@
                 </div>
 
 
-                <h1 v-if="store.series.length > 0">Series:</h1>
-                <div class="row gx-5 gy-3">
+                <h1 v-if="store.series.length > 0">Series</h1>
+                <div class="row mx-2 gy-3">
                     <div class="col-3" v-for="(series,i) in store.series">
                         <div>
                             <ul>
@@ -76,6 +76,7 @@
             color:white;
             margin-top: 20px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         ul{

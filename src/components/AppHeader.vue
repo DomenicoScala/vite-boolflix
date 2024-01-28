@@ -87,9 +87,7 @@
         }
 
 
-        .title{
-            flex-grow: 1;
-        }
+       
 
         .first-men-header ul li{
             display: inline-block;
