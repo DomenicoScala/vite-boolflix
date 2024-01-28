@@ -16,22 +16,7 @@
         <header>
            <div class="container">
                 <div class="header-flex">
-                    <div class="first-men-header">
-                        <div>
-                            <i class="fa-solid fa-bars"></i>
-                        </div>
-                        
-                        <div>
-                            <ul>
-                                <li>
-                                    <a href="#">Movies</a>
-                                </li>
-                                <li>
-                                    <a href="#">Series</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     
                     
                     <div class="title">
@@ -40,11 +25,28 @@
                     
                     
                     <div class="searchInput">
-                        <input  v-model="store.searchText" type="text" placeholder="Cerca il tuo film o la serie tv..">
-            
-                        <button @click="$emit('performSearch')">
-                            CERCA
-                        </button>
+                        <div class="first-men-header">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Movies</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Series</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                            <div>
+                                <input  v-model="store.searchText" type="text" placeholder="Cerca il tuo film o la serie tv..">
+                    
+                                <button @click="$emit('performSearch')">
+                                    CERCA
+                                </button>
+                            </div>                        
+                        </div>
+                        
+                        
                     </div>
                 </div>
            </div> 
@@ -57,6 +59,9 @@
 <style lang="scss" scoped>
     @use '../assets/scss/partials/reset.scss' as *;
     
+
+   
+   
     header{
         height: 80px;
         background-color:black;;
@@ -66,12 +71,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px;
+        padding: 20px;
         background-color: black;
 
-        >*{
-            background-color: black;
-        }
+
 
 
         .first-men-header ul{
@@ -91,18 +94,26 @@
 
         .first-men-header ul li{
             display: inline-block;
-            margin: 10px;
+          
             
             & a{
                 color: white;
                 text-decoration: none;
                 cursor: pointer;
+                margin-right: 30px;
             }
         }
+
+        .first-men-header ul li:hover{
+            text-decoration: underline;
+            color: white;
+        }
+
 
         .first-men-header{
             display: flex;
             align-items: center;
+
         }
 
 
